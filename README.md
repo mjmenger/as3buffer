@@ -1,7 +1,7 @@
 # as3buffer
 
 ## Overview
-This container is intended to be used for buffer substantial volumes of AS3 traffic to a BIG-IP management endpoint. You can find the source [here](https://github.com/mjmenger/as3buffer). While you can use this container, it's highly recommended that you use the source and build your own image so you have a clear grasp of what is in the container and what it does on your behalf.
+This container is intended to be used for buffer substantial volumes of AS3 traffic to a BIG-IP management endpoint. You can find the source [here](https://github.com/mjmenger/as3buffer). While you can use this image, it's highly recommended that you use the source and build your own image so you have a clear grasp of what is in the container and what it does on your behalf.
 
 ## Setup
 If you don't have Docker installed, [install Docker](https://docs.docker.com/get-docker/). I acknowledge that it's silly to include this link in a README that will show up in Docker Hub.
