@@ -13,7 +13,7 @@ pipeline {
         retry(3)
     }
     parameters {
-        string(name: 'MGMT_URI', defaultValue: 'https://BIG-IP address/mgmt/shared/appsvcs/declare', description: 'Provide the URL where BIG-IP management endpoint can be accessed.')
+        string(name: 'MGMT_URI', defaultValue: env.BIGIP_MGMT_URI, description: 'Provide the URL where BIG-IP management endpoint can be accessed.')
         text(name: 'AS3_JSON', defaultValue: '', description: 'The AS3 declaration to post to the BIG-IP')
     }    
     stages {

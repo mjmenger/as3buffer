@@ -1,4 +1,10 @@
 jenkins:
+  systemMessage: "This system is configured for BIG-IP AS3 buffering only"
+  globalNodeProperties:
+    - envVars:
+        env:
+        - key: BIGIP_MGMT_URI
+          value: ${BIGIP_MGMT_URI}
   securityRealm:
     local:
       allowsSignup: false
