@@ -13,7 +13,6 @@ pipeline {
         retry(3)
     }
     parameters {
-        string(name: 'MGMT_URI', defaultValue: env.BIGIP_MGMT_URI, description: 'Provide the URL where BIG-IP management endpoint can be accessed.')
         text(name: 'AS3_JSON', defaultValue: '', description: 'The AS3 declaration to post to the BIG-IP')
     }    
     stages {
@@ -25,7 +24,7 @@ pipeline {
         stage("Post the Declaration"){
             steps {
                 script {
-                    def response = httpRequest url: params.MGMT_URI, 
+                    def response = httpRequest url: env.BIGIP_MGMT_URI, 
                                             httpMode: 'POST',
                                             authentication: 'bigip-creds',
                                             validResponseCodes: '200:302',
