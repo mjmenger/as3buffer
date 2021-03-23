@@ -44,5 +44,5 @@ CREDS="$JENKINS_ADMIN_ID:$JENKINS_ADMIN_PASSWORD"
 # File where web session cookie is saved
 COOKIEJAR="$(mktemp)"
 CRUMB=$(curl -u $CREDS --cookie-jar "$COOKIEJAR" "$SERVER/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)")
-curl -v -X POST  -u $CREDS --cookie "$COOKIEJAR" -H "$CRUMB" "$SERVER"/job/as3buffer/buildWithParameters  --data "MGMT_URI=https://<BIG-IP address>/mgmt/shared/appsvcs/declare" --data-urlencode "AS3_JSON@sampleas3.json"
+curl -v -X POST  -u $CREDS --cookie "$COOKIEJAR" -H "$CRUMB" "$SERVER"/job/as3buffer/buildWithParameters --data-urlencode "AS3_JSON@sampleas3.json"
 ```
