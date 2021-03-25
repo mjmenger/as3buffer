@@ -5,6 +5,8 @@ jenkins:
         env:
         - key: BIGIP_MGMT_URI
           value: ${BIGIP_MGMT_URI}
+        - key: BIGIP_HOST
+          value: ${BIGIP_HOST}
   securityRealm:
     local:
       allowsSignup: false
@@ -37,3 +39,4 @@ credentials:
             password: "${BIGIP_ADMIN_PASSWORD}"
 jobs:
   - file: /usr/local/as3buffer.groovy
+  - file: /usr/local/icrestbuffer.groovy
