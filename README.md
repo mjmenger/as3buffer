@@ -20,7 +20,7 @@ The BIG-IP admin user and password is associated with a previously built BIG-IP.
 
 ## Run
 ```bash
-docker run -d --env JENKINS_ADMIN_ID=$JENKINS_ADMIN_ID --env JENKINS_ADMIN_PASSWORD=$JENKINS_ADMIN_PASSWORD --env BIGIP_MGMT_URI=$BIGIP_MGMT_URI --env BIGIP_ADMIN_ID=$BIGIP_ADMIN_ID --env BIGIP_ADMIN_PASSWORD=$BIGIP_ADMIN_PASSWORD -p 8080:8080 mmenger/as3buffer:latest 
+docker run -d --env JENKINS_ADMIN_ID=$JENKINS_ADMIN_ID --env JENKINS_ADMIN_PASSWORD=$JENKINS_ADMIN_PASSWORD --env BIGIP_HOST=$BIGIP_HOST --env BIGIP_MGMT_URI=$BIGIP_MGMT_URI --env BIGIP_ADMIN_ID=$BIGIP_ADMIN_ID --env BIGIP_ADMIN_PASSWORD=$BIGIP_ADMIN_PASSWORD -p 8080:8080 mmenger/as3buffer:latest 
 ```
 
 ## Deal with an issue

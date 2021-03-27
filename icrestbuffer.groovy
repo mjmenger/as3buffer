@@ -14,12 +14,12 @@ pipeline {
     }
     parameters {
         string(name: 'ICREST_URI', defaultValue: '', description: 'Provide the iControlREST endpoint.')
-        text(name: 'JSON', defaultValue: '', description: 'The json payload to post to the BIG-IP')
+        text(name: 'ICREST_JSON', defaultValue: '', description: 'The json payload to post to the BIG-IP')
     }    
     stages {
         stage("Echo Request") {
             steps {
-                echo "AS3 Declaration: " + params.AS3_JSON
+                echo "JSON Declaration: " + params.ICREST_JSON
             }
         }
         stage("Post the Declaration"){
@@ -31,7 +31,7 @@ pipeline {
                                             validResponseCodes: '200:302',
                                             ignoreSslErrors: true,
                                             consoleLogResponseBody: true,
-                                            requestBody: params.JSON
+                                            requestBody: params.ICREST_JSON
                     println('Status: '+response.status)
                     println("Content: "+response.content)
                 }
