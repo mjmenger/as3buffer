@@ -24,7 +24,7 @@ pipeline {
         stage("Post the Declaration"){
             steps {
                 script {
-                    def response = httpRequest url: env.BIGIP_MGMT_URI, 
+                    def response = httpRequest url: 'https://'+env.BIGIP_HOST+env.BIGIP_MGMT_ENDPOINT, 
                                             httpMode: 'POST',
                                             authentication: 'bigip-creds',
                                             validResponseCodes: '200:302',

@@ -7,6 +7,8 @@ jenkins:
           value: ${BIGIP_MGMT_URI}
         - key: BIGIP_HOST
           value: ${BIGIP_HOST}
+        - key: BIGIP_MGMT_ENDPOINT
+          value: "/mgmt/shared/appsvcs/declare"
   securityRealm:
     local:
       allowsSignup: false
