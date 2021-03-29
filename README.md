@@ -10,7 +10,7 @@ Set the following environment variables
 ```bash
 export JENKINS_ADMIN_ID=admin
 export JENKINS_ADMIN_PASSWORD=supersecretpassword
-export BIGIP_MGMT_URI=https://bigipaddress/mgmt/shared/appsvcs/declare
+export BIGIP_HOST=bigipaddress
 export BIGIP_ADMIN_ID=admin
 export BIGIP_ADMIN_PASSWORD=anothersupersecretpassword
 ```
@@ -20,7 +20,7 @@ The BIG-IP admin user and password is associated with a previously built BIG-IP.
 
 ## Run
 ```bash
-docker run -d --env JENKINS_ADMIN_ID=$JENKINS_ADMIN_ID --env JENKINS_ADMIN_PASSWORD=$JENKINS_ADMIN_PASSWORD --env BIGIP_HOST=$BIGIP_HOST --env BIGIP_MGMT_URI=$BIGIP_MGMT_URI --env BIGIP_ADMIN_ID=$BIGIP_ADMIN_ID --env BIGIP_ADMIN_PASSWORD=$BIGIP_ADMIN_PASSWORD -p 8080:8080 mmenger/as3buffer:latest 
+docker run -d --env JENKINS_ADMIN_ID=$JENKINS_ADMIN_ID --env JENKINS_ADMIN_PASSWORD=$JENKINS_ADMIN_PASSWORD --env BIGIP_HOST=$BIGIP_HOST --env BIGIP_ADMIN_ID=$BIGIP_ADMIN_ID --env BIGIP_ADMIN_PASSWORD=$BIGIP_ADMIN_PASSWORD -p 8080:8080 mmenger/as3buffer:0.3.3 
 ```
 
 ## Deal with an issue
