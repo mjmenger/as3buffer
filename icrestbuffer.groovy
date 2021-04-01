@@ -13,6 +13,7 @@ pipeline {
         retry(3)
     }
     parameters {
+        string(name: 'ICREST_METHOD', defaultValue: 'PATCH', description: 'HTTP method to use with call')
         string(name: 'ICREST_URI', defaultValue: '', description: 'Provide the iControlREST endpoint.')
         text(name: 'ICREST_JSON', defaultValue: '', description: 'The json payload to post to the BIG-IP')
     }    
@@ -26,7 +27,7 @@ pipeline {
             steps {
                 script {
                     def response = httpRequest url: 'https://'+env.BIGIP_HOST+params.ICREST_URI, 
-                                            httpMode: 'PATCH',
+                                            httpMode: params.ICREST_METHOD,
                                             authentication: 'bigip-creds',
                                             validResponseCodes: '200:302',
                                             ignoreSslErrors: true,
